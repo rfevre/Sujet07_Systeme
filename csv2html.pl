@@ -5,7 +5,7 @@ $var = <STDIN>;
 open(FIC,"$var") or die "Erreur";
 @fic = <FIC> ;
 
-open(DESCR,">test.html");
+open(DESCR,">temp.html");
 
 print DESCR "<html>";
 print DESCR "<table>";
@@ -25,4 +25,5 @@ foreach my $line (@fic)
 print DESCR "</table>";
 print DESCR "</html>";
 close(DESCR);
+close(FIC);
 
