@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+
+print("Nom de fichier d'entrée :","\n");
+$entree=<STDIN>;
+print("$entree","\n");
