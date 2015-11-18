@@ -26,6 +26,7 @@ if (! -e $sortie){
         print DESCR "$line";
     }
     close(DESCR);
+    close(FIC);
 }
 else {
     print("Voulez vous remplacer le fichier : (o/n)","\n");
@@ -41,6 +42,7 @@ else {
 	    print DESCR "$line";
 	}
 	close(DESCR);
+	close(FIC);
     }
     else {
 	print("Le fichier n'a pas été créé","\n");

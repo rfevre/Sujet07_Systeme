@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+@var=<STDIN>;
+
+print <<EOF
+<html>
+<body>
+<table>
+EOF
+;
+open FILE, "<$ARGV[0]" || die "Unable to open file: $ARGV[0].\n";
+$_=<FILE>;
+@array=split(/,/,$_); #get the table header information
+print "<tr>\n";
+foreach (@array){ #output table columns
+    print "<th>$_</th>";
+}
+ 
+while (<FILE>){ #read line by line from the file
+@array=split(/,/,$_);
+next if (length($array[0])<=0); #skip line since there is no info here.
+print "<tr>\n";
+foreach (@array){ #output table columns
+    print "<td>$_</td>";
+}
+print "</tr>\n";
+} #end while loop
+ 
+print <<EOF
+</table>
+</body>
+</html>
+EOF
+;
