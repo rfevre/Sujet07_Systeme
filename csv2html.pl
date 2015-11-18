@@ -1,29 +1,37 @@
 #!/usr/bin/perl
 
+$header=0;
 $var = <STDIN>;
 
 open(FIC,"$var") or die "Erreur";
 @fic = <FIC> ;
 
-open(DESCR,">temp.html");
 
-print DESCR "<html>";
-print DESCR "<table>";
+print "<html>";
+print "<table>";
 
 foreach my $line (@fic)
 {
-    print DESCR "<tr>";
+    if ($header == 0) {
+	print "<tr>";
+	my @cells= split ';',$line;
+	foreach my $cell (@cells)
+	{
+	    print "<th>$cell</th>";
+	}
+	print "</tr>";
+	$header++;
+    }
+    print "<tr>";
     my @cells= split ';',$line;
     foreach my $cell (@cells)
     {
-       print DESCR "<td>$cell</td>";
+       print "<td>$cell</td>";
     }
-    print DESCR "</tr>";
-
+    print "</tr>";
 }
 
-print DESCR "</table>";
-print DESCR "</html>";
-close(DESCR);
+print "</table>";
+print "</html>";
 close(FIC);
 
