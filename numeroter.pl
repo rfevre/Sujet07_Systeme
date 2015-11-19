@@ -11,7 +11,7 @@ if (scalar @ARGV == 1) {
     }
 }
 else {
-    open(FIC,"<STDIN>") or die "Erreur : $!";
+    open(FIC,<STDIN>) or die "Erreur : $!";
     foreach $line (<FIC>)
     {
         chomp($line) ;
