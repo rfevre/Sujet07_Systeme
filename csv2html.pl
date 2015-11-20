@@ -6,7 +6,6 @@ $var = <STDIN>;
 $separateur = ';';
 
 getopts( 'd:s:S', \%opts ) or print_usage();
-#print "$opts{d} et $opts{s} et $opts{S}";
 if (! $opts{d} == undef){
     $separateur=$opts{d};
 }
@@ -19,7 +18,12 @@ elsif (! $opts{S} == undef){
 
 open(FIC,"$var") or die "Open : $!";
 
-print "<html>";
+print "<html lang=\"fr\">";
+print "<head>";
+print "<meta charset=\"utf-8\">";
+print "<title>Test</title>";
+print "<link rel=\"stylesheet\" href=\"style.css\">";
+print "</head>";
 print "<table>";
 
 foreach my $line (<FIC>)
