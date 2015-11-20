@@ -2,3 +2,5 @@ nom;prenom;1;option1
 nom2;prenom2;1;option2
 nom3;prenom3;2;option1
 nom4;prenom4;2;option2
+nom5,prenom5,2,option2
+nom6	prenom6	2	option1	
